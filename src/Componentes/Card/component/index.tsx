@@ -32,7 +32,34 @@ export interface params {
 /**
  * 
  * @param params 
- * @returns 
+ * @param params.value  Identificador del elemento
+ * @param params.title  titulo del elemento
+ * @param params.description  descripción del elemento
+ * @param params.image  imagen del elemento
+ * @param params.onClick  callback que retorna un identificador al precionar sobre el componente
+ * 
+ * @example
+ * import { useState } from 'react';
+ * import Card, { params as paramsCard } from './Componentes/Card';
+ * import Grid from './Componentes/Grid';
+ *
+ * const App = (): JSX.Element => {
+ *   const [ data, setData ] = useState<paramsCard[]>([
+ *     { value: '1', title:'Tienda 1', image:'/vite.svg'},
+ *     { value: '2', title:'Tienda 2', image:'/vite.svg'},
+ *     { value: '3', title:'Tienda 3', image:'/vite.svg'},
+ *  ])
+ *  return (
+ *    <Grid>
+ *      { data.map((value, index) => ( <Card key={index} {...value} onClick={} /> )) }      
+ *    </Grid>
+ *  )
+ * }
+
+ * export default App
+ 
+ * 
+ * @returns JSX.Element
  */
 
 const App = (params: params): JSX.Element => {
