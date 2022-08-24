@@ -30,6 +30,8 @@ export interface params {
   title: string;
   description?: string;
   onClick?: (value:string) => void;
+  onMouseLeave?: React.MouseEventHandler<HTMLDivElement>
+  onMouseOver?: React.MouseEventHandler<HTMLDivElement>
 }
 
 const defaultProps = {
@@ -44,7 +46,7 @@ const App = (params: params): JSX.Element => {
     if (typeof(params.onClick) === 'function') params.onClick(params.value)
   }
   return(
-    <Container onClick={handleClick}>
+    <Container onClick={handleClick} onMouseLeave={params.onMouseLeave} onMouseOver={params.onMouseOver} >
       <Img src={params.image} />
 
       <Body>

@@ -18,10 +18,16 @@ const App = (): JSX.Element => {
   const handleSelect: paramsCard['onClick'] = (e) => {
     console.log(e)
   }
-  
+    
   return (
     <Grid>
-      <CardProducts value='1' image='telefono1.webp' title='Telefono' />
+      <CardProducts
+        value='1' 
+        image='telefono1.webp' 
+        title='Telefono'
+        onMouseOver={()=>console.log('over')}
+        onMouseLeave={()=>console.log('leave')}
+      />
       <CardProducts value='2' image='telefono2.webp' title='Telefono' />
       { data.map((value, index) => <Card key={index} {...value} onClick={handleSelect} />) }
       
