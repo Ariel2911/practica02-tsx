@@ -39,8 +39,12 @@ const defaultProps = {
 
 const App = (params: params): JSX.Element => {
   params = { ...defaultProps, ...params}
+
+  const handleClick = () => {
+    if (typeof(params.onClick) === 'function') params.onClick(params.value)
+  }
   return(
-    <Container>
+    <Container onClick={handleClick}>
       <Img src={params.image} />
 
       <Body>

@@ -21,7 +21,8 @@ const App = (): JSX.Element => {
   
   return (
     <Grid>
-      <CardProducts image='telefono.webp' title='Telefono' />
+      <CardProducts value='1' image='telefono1.webp' title='Telefono' />
+      <CardProducts value='2' image='telefono2.webp' title='Telefono' />
       { data.map((value, index) => <Card key={index} {...value} onClick={handleSelect} />) }
       
     </Grid>
