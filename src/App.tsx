@@ -12,13 +12,18 @@ const App = (): JSX.Element => {
     { value: '6', title:'Tienda 6', image:'/vite.svg'},
     { value: '7', title:'Tienda 7', image:'/vite.svg'},
     { value: '8', title:'Tienda 8', image:'/vite.svg'},
-  ])
+  ]);
+
+  const handleSelect: paramsCard['onClick'] = (e) => {
+    console.log(e)
+  }
+  
   return (
     <Grid>
       {
         data.map((value, index) => (
 
-          <Card key={index} {...value} onClick={} />
+          <Card key={index} {...value} onClick={handleSelect} />
 
         ))
       }
