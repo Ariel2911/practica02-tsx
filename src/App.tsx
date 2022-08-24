@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Card, { params as paramsCard } from './Componentes/Card';
+import CardProducts from './Componentes/Product';
 import Grid from './Componentes/Grid';
 
 const App = (): JSX.Element => {
@@ -20,13 +21,8 @@ const App = (): JSX.Element => {
   
   return (
     <Grid>
-      {
-        data.map((value, index) => (
-
-          <Card key={index} {...value} onClick={handleSelect} />
-
-        ))
-      }
+      <CardProducts image='telefono.webp' title='Telefono' />
+      { data.map((value, index) => <Card key={index} {...value} onClick={handleSelect} />) }
       
     </Grid>
   )

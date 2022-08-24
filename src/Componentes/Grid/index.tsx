@@ -12,6 +12,7 @@ const Grid = styled.div`
   width: 100%;
   height: 100vh;
   overflow: scroll;
+  background-color: #222329;
 `;
 
 export default Grid;
