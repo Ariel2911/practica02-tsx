@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -32,12 +33,12 @@ export interface params {
   onClick?: (value:string) => void;
   onMouseLeave?: React.MouseEventHandler<HTMLDivElement>
   onMouseOver?: React.MouseEventHandler<HTMLDivElement>
-}
+};
 
 const defaultProps = {
   // title: 'Productp 1',
   // image: "https://http2.mlstatic.com/D_NQ_NP_657258-MLA47664529266-0.webp"
-}
+};
 
 /**
  * 
@@ -69,12 +70,14 @@ const defaultProps = {
  * @returns  JSX.Element
  */
 
+
 const App = (params: params): JSX.Element => {
-  params = { ...defaultProps, ...params}
+  params = { ...defaultProps, ...params};
 
   const handleClick = () => {
     if (typeof(params.onClick) === 'function') params.onClick(params.value)
-  }
+  };
+
   return(
     <Container onClick={handleClick} onMouseLeave={params.onMouseLeave} onMouseOver={params.onMouseOver} >
       <Img src={params.image} />
@@ -84,7 +87,7 @@ const App = (params: params): JSX.Element => {
         <Description>{params.description}</Description>
       </Body>
     </Container>
-  )
-}
+  );
+};
 
 export default App;

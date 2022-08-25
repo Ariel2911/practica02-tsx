@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'styled-components';
 
 import Avatar from '../../Avatar';
@@ -65,8 +66,8 @@ export interface params {
 const App = (params: params): JSX.Element => {
 
   const handleClick = () => {
-    if (typeof(params.onClick) === 'function') params.onClick(params.value)
-  }
+    if (typeof(params.onClick) === 'function') params.onClick(params.value);
+  };
 
   return (
     <Container onClick={handleClick} >
@@ -81,4 +82,4 @@ const App = (params: params): JSX.Element => {
   );
 };
 
-export default App
+export default App;
